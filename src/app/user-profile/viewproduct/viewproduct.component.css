@@ -1,0 +1,19 @@
+/* .spacer{
+    flex: 1 1 auto;
+  } */
+  .center {
+    display: block;
+    margin-left: 20px;
+    margin-right:20px ;
+    /* width: 10%; */
+  }  
+ 
+  a { cursor: pointer; }
+  .pagination {
+     justify-content: center;
+     flex-wrap: wrap;
+  }
+
+  /* .aligncenter {
+    text-align: center;
+} */

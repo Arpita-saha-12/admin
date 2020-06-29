@@ -1,0 +1,78 @@
+<!-- <mat-form-field>
+  <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+</mat-form-field>  -->
+<!-- <div fxLayout fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div> -->
+
+<!-- <div class="viewcat" style="background-color: rgb(172, 127, 255); max-height: 3000vh;">
+  <div class="container">
+    <h2>View Product</h2>            
+    <table class="table table-hover">
+  
+        <tr>
+          <th>Sl No.</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Picture</th>
+          <th>Category</th>
+          <th>Brand</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      
+        <tr *ngFor="let product of products;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{product.iname}}</td>
+          <td>{{product.idesc}}</td>
+          <td>{{product.iprice}}</td>
+          <td><img [src]="getSafeUrl(product.ipic)" height="100" width="100"></td>
+          <td>{{product.category_id}}</td>
+          <td>{{product.brand_id}}</td>
+          <td><a routerLink="../EditProduct/{{product._id}}"><img src="assets/logo/edit.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+          <td><a class="action-btn" (click)="onDelete(product._id)"><img src="assets/logo/delete.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+        </tr>
+        <router-outlet></router-outlet>
+    </table>
+  </div>
+  </div> -->
+  <br><br>
+  <div style="text-align:center">
+  <h2>View Product</h2></div>
+  <br>
+  <div style="text-align:left">
+  <h6>{{title}}</h6>
+  <input [(ngModel)]="searchText" placeholder="Enter Product Name/Description/Price" /></div>
+  <p>
+    {{id}}
+  </p>
+  <div class="center">
+  <div class="product">
+    <div class="row" >
+      <div class="column" *ngFor="let product of products | filter:searchText">
+        <div class="content">
+        <mat-card>
+          <mat-card-header>
+          <h6>Product Name:{{product.iname}}</h6>
+        </mat-card-header>
+          <img [src]="getSafeUrl(product.ipic)" alt="pic" height="220" width="220">
+        <mat-card-content>
+          <p>Description:{{product.idesc}}</p>
+          <h4 >Price:{{product.iprice}}/-</h4>
+        </mat-card-content>
+          <!-- <a routerLink="../EditProduct/{{product._id}}"><img src="assets/logo/edit.png" id="icon" height="30" width="30" alt="User Icon" /></a> -->
+          <mat-card-actions>
+          <button class="btn btn-success"  (click)="onEdit(product._id)">Edit</button>
+          <button class="btn btn-success" mat-raised-button color="warn" (click)="onDelete(product._id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+    

@@ -1,0 +1,27 @@
+
+<div style="text-align:center">
+  <br>
+  <h1>
+    Add Brand 
+  </h1>
+ </div>
+ <div style="margin:20px 50px 20px 50px;">
+<form #brandform="ngForm" (ngSubmit)="onSubmit(brandform)">
+    <input type="hidden" name="_id" #_id="ngModel" ngModel [(ngModel)]="selectedBrand._id">
+  <div class="form-group">
+    <label for="brand">Brand Name</label>
+    <input type="text" name="brand" #qname="ngModel" ngModel [(ngModel)]="selectedBrand.brandname" class="form-control" id="inputdefault" placeholder="Brand Name">
+  </div>
+  <div class="form-group">
+    <label for="Brand">Brand Description</label>
+    <input type="text" name="Brand" #qname="ngModel" ngModel [(ngModel)]="selectedBrand.bdesc" class="form-control" id="inputdefault" placeholder="Brand Description">
+  </div>
+  <div class="form-group">
+    <label for="Brand">Brand Picture</label>
+    <input type="file" name="photo"  [(ngModel)]="selectedBrand.bpic" class="form-control" id="inputdefault" (change)="onfileselect($event)" />
+  </div>
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" id="inputdefault">
+  </div>
+</form>
+</div>
