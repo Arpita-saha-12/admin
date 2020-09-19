@@ -6,15 +6,18 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddcategoryComponent } from './user-profile/addcategory/addcategory.component';
 import { ViewcategoryComponent } from './user-profile/viewcategory/viewcategory.component';
 import { EditcategoryComponent } from './user-profile/updatecategory/editcategory.component';
-import { AddbrandComponent } from './user-profile/addbrand/addbrand.component';
-import { ViewbrandComponent } from './user-profile/viewbrand/viewbrand.component';
-import { EditbrandComponent } from './user-profile/updatebrand/editbrand.component';
-import { AddproductComponent } from './user-profile/addproduct/addproduct.component';
+import { AddeventComponent } from './user-profile/addevent/addevent.component';
+import { VieweventComponent } from './user-profile/viewevent/viewevent.component';
+import { EditeventComponent } from './user-profile/updateevent/editevent.component';
+import { AdditemComponent } from './user-profile/additem/additem.component';
 import { ReguserComponent } from './user-profile/viewreguser/reguser.component';
 import { BookingComponent } from './user-profile/viewbooking/booking.component';
-import { ViewproductComponent} from './user-profile/viewproduct/viewproduct.component';
-import { EditproductComponent } from './user-profile/updateproduct/editproduct.component';
+// import { BookingEventComponent } from './user-profile/vieweventbooking/bookingevent.component';
+import { ViewitemComponent} from './user-profile/viewitem/viewitem.component';
+import { EdititemComponent } from './user-profile/updateitem/edititem.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AboutComponent} from './user-profile/about/about.component';
+
 
 export const appRoutes: Routes = [
     {
@@ -30,14 +33,18 @@ export const appRoutes: Routes = [
         children: [{ path: 'AddCategory', component: AddcategoryComponent  },
         { path: 'ViewCategory', component: ViewcategoryComponent },
         { path: 'EditCategory/:id', component : EditcategoryComponent},
-        { path: 'AddBrand', component: AddbrandComponent  },
-        { path: 'ViewBrand', component: ViewbrandComponent },
-        { path: 'EditBrand/:id', component : EditbrandComponent},
-        { path: 'AddProduct', component: AddproductComponent},
-        { path: 'ViewProduct', component: ViewproductComponent},
-        { path: 'EditProduct/:id', component: EditproductComponent },
+        { path: 'AddEvent', component: AddeventComponent  },
+        { path: 'ViewEvent', component: VieweventComponent },
+        { path: 'EditEvent/:id', component : EditeventComponent},
+        { path: 'AddItem', component: AdditemComponent},
+        { path: 'ViewItem', component: ViewitemComponent},
+        { path: 'EditItem/:id', component: EdititemComponent },
         { path: 'reguser', component: ReguserComponent},
-        { path: 'booking' , component: BookingComponent}
+        { path: 'booking' , component: BookingComponent},
+        {path: 'about' , component: AboutComponent},
+
+        // { path: 'bookingevent' , component: BookingEventComponent}
+
     ]
     },
     {

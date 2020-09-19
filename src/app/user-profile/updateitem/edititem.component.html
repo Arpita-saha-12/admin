@@ -1,0 +1,44 @@
+
+<div style="text-align:center">
+  <br><br>
+  <h1>
+    Update Item 
+  </h1>
+ </div>
+ <div style="margin:20px 50px 20px 50px;">
+<form #Itemform="ngForm" (ngSubmit)="onEdit(Itemform)" enctype="multipart/form-data">
+    <input type="hidden" name="_id" #_id="ngModel" ngModel [(ngModel)]="selectedItem._id">
+  <div class="form-group">
+    <label for="Item">Item Name</label>
+    <input type="text" name="iname" #qname="ngModel" ngModel [(ngModel)]="selectedItem.iname" class="form-control" id="inputdefault" placeholder="Item Name">
+  </div>
+  <div class="form-group">
+    <label for="Item">Item Description</label>
+    <input type="text" name="idesc" #qname="ngModel" ngModel [(ngModel)]="selectedItem.idesc" class="form-control" id="inputdefault" placeholder="Item Description">
+  </div>
+  <div class="form-group">
+    <label for="Item">Item Price</label>
+    <input type="text" name="iprice" #qname="ngModel" ngModel [(ngModel)]="selectedItem.iprice" class="form-control" id="inputdefault" placeholder="Item Price">
+  </div>
+  <div class="form-group">
+    <label for="Item">Item Old Picture</label>
+    <img [src]="getSafeUrl(selectedItem.ipic)" height="100" width="100">
+  </div>
+
+  <div class="form-group">
+    <label for="Item">Item Picture</label>
+    <input type="file" name="photo"   class="form-control" id="inputdefault" (change)="onfileselect($event)" />
+  </div>
+  <div class="form-group">
+    <label for="Item">Item Category</label>
+  		<select [(ngModel)]="selectedItem.category_id" name="fooa" class="form-control"> 
+				<option [selected]="selectedItem.category_id == 'select'" [value]="true">SELECT CATEGORY</option>  
+        <option  *ngFor="let cat of category" [value]="cat.categoryname">{{cat.categoryname}}</option>
+			</select>
+		</div>
+
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" id="inputdefault">
+  </div>
+</form>
+</div>

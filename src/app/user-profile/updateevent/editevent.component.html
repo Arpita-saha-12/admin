@@ -1,0 +1,19 @@
+
+<div style="text-align:center">
+  <br><br>
+  <h1>
+    Update Event 
+  </h1>
+ </div>
+ <div style="margin:20px 50px 20px 50px;">
+<form #eventform="ngForm" (ngSubmit)="onEdit(eventform)">
+    <input type="hidden" name="_id" #_id="ngModel" ngModel [(ngModel)]="selectedEvent._id">
+  <div class="form-group">
+    <label for="event">Event Name</label>
+    <input type="text" name="eventname" #qname="ngModel" ngModel [(ngModel)]="selectedEvent.eventname" class="form-control" id="inputdefault" placeholder="Event Name">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" id="inputdefault">
+  </div>
+</form>
+</div>

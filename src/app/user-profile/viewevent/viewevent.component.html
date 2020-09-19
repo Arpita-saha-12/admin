@@ -1,0 +1,50 @@
+<!-- <div class="viewevent" style="background-color: rgb(172, 127, 255); max-height: 600vh;">
+<div class="container">
+  <h2>View event</h2>            
+  <table class="table table-hover">
+
+      <tr>
+        <th>Sl No.</th>
+        <th>event Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    
+      <tr *ngFor="let event of event;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{event.eventname}}</td>
+        <td><a routerLink="../Editevent/{{event._id}}"><img src="assets/logo/edit.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+        <td><a class="action-btn" (click)="onDelete(event._id)"><img src="assets/logo/delete.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+      </tr>
+      <router-outlet></router-outlet>
+  </table>
+</div>
+</div> -->
+<div style="text-align:center">
+  <br><br>
+  <h1>
+    View Event 
+  </h1>
+ </div>
+<p>
+  {{id}}
+</p>
+<div class="center">
+<!-- <div style="background-color:white;height:400px;width:320px;border-bottom-left-radius:9px;border-bottom-right-radius:7px;border-top-right-radius:7px;border-top-left-radius:7px"> -->
+<div class="product">
+  <div class="row" >
+    <div class="column" *ngFor="let event of event">
+      <div class="content" style="background-color:white;height:400px;width:320px;border-bottom-left-radius:9px;border-bottom-right-radius:7px;border-top-right-radius:7px;border-top-left-radius:7px">
+        <br><div class="center">
+        <img [src]="getSafeUrl(event.bpic)" alt="pic" height="220" width="220" class="center">
+        <h6 style="text-align:center;"><b>Event Name:</b>{{event.eventname}}</h6>
+        <p><b>Description:</b><i>{{event.bdesc}}</i></p>
+        <!-- <a routerLink="../EditProduct/{{product._id}}"><img src="assets/logo/edit.png" id="icon" height="30" width="30" alt="User Icon" /></a> -->
+        <button class="btn btn-success"  (click)="onEdit(event._id)">Edit</button>
+        <button class="btn btn-success" mat-raised-button color="primary" (click)="onDelete(event._id)">Delete</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>

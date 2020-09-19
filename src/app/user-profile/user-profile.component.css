@@ -115,7 +115,13 @@ header{
   font-size: 22px;
   font-weight: 900;
 }
-
+.left_area h4{
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
+}
 .left_area span{
   color: #19B3D3;
 }
@@ -254,7 +260,7 @@ label #sidebar_btn:hover{
 
 .content{
   margin-left: 250px;
-  background: url(/assets/img/background.png) no-repeat;
+  background: url(/assets/img/online.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   height: 170vh;
